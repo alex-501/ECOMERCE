@@ -8,7 +8,7 @@ require('dotenv').config();
 const sequelize = new Sequelize(process.env.sales_db, process.env.LOCALHOST, process.env.$$Yumaaz1996$$, {
   host: 'localhost',
   dialect: 'mysql',
-  port: 3306
+  port: 3301
 });
 
 
