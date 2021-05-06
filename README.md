@@ -41,6 +41,11 @@ WHEN I open API GET routes in Insomnia Core for categories, products, or tags
 THEN the data for each of these routes is displayed in a formatted JSON
 WHEN I test API POST, PUT, and DELETE routes in Insomnia Core
 THEN I am able to successfully create, update, and delete data in my database
-![image](https://user-images.githubusercontent.com/68447140/117228304-a13d9280-adcd-11eb-9833-057d199a18a3.png)
 
+![Screenshot (200)](https://user-images.githubusercontent.com/68447140/117230980-1495d300-add3-11eb-849f-4e7dd4d327c4.png)
+
+
+
+![Screenshot (203)](https://user-images.githubusercontent.com/68447140/117230986-19f31d80-add3-11eb-9364-9e5bafc7dce9.png)
+![Screenshot (204)](https://user-images.githubusercontent.com/68447140/117231017-26777600-add3-11eb-8f40-05b68f83834d.png)
 
