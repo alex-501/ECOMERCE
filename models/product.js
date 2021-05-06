@@ -1,17 +1,35 @@
-// import important parts of sequelize library
-const { Model, DataTypes } = require('sequelize');
-// import our database connection from config.js
-const sequelize = require('../config/connection');
 
-// Initialize Product model (table) by extending off Sequelize's Model class
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 class Product extends Model {}
 
-// set up fields and rules for Product model
-Product.init(
-  {
-    // define columns
-  },
-  {
+//https://sequelize.org/master/manual/creating-with-associations.html
+
+Product.init(  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true},
+
+
+    product_name: {
+      type: DataTypes.STRING,
+      allowNull: false},
+    price: {
+      type: DataTypes.DECIMAL,
+      allowNull: false,
+      validate: {
+        isDecimal: true}},    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id'}}},
+      
+//end
+
+
+        {
     sequelize,
     timestamps: false,
     freezeTableName: true,
