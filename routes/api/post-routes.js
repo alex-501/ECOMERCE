@@ -15,8 +15,11 @@ router.get('/', (req, res) => {
   });
 
 // get all users
-router.get('/', (req, res) => {
-    Post.findAll({
+router.get('/:id', (req, res) => {
+    Post.findOne({
+      where: {
+        id: req.params.id
+      },
       attributes: ['id', 'post_url', 'title', 'created_at'],
       include: [
         {
@@ -25,7 +28,13 @@ router.get('/', (req, res) => {
         }
       ]
     })
-      .then(dbPostData => res.json(dbPostData))
+      .then(dbPostData => {
+        if (!dbPostData) {
+          res.status(404).json({ message: 'No post found with this id' });
+          return;
+        }
+        res.json(dbPostData);
+      })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);

@@ -1,13 +1,20 @@
-const User = require("./User");
-const Post = require("./Post");
+// import models
+const Product = require('./Product');
+const Category = require('./Category');
+const Tag = require('./Tag');
+const ProductTag = require('./ProductTag');
 
-// create associations
-User.hasMany(Post, {
-    foreignKey: 'user_id'
-  });
+// Products belongsTo Category
 
-  Post.belongsTo(User, {
-    foreignKey: 'user_id',
-  });
+// Categories have many Products
 
-module.exports = { User, Post };
+// Products belongToMany Tags (through ProductTag)
+
+// Tags belongToMany Products (through ProductTag)
+
+module.exports = {
+  Product,
+  Category,
+  Tag,
+  ProductTag,
+};
